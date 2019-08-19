@@ -1,3 +1,7 @@
+<?php
+if (!include_once 'config.inc.php') exit;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +14,10 @@
 </head>
 <body>
     <div class='top_bar'>
-        <a href="http://pic.localhost" title="Pic Home">Home</a>
-        <a href="http://localhost" title="Blog Home">Blog</a>
-        <a href="http://pic.localhost/album" title="Photo Album">Album</a>
-        <a href="http://pic.localhost/login" title="Login">Login</a>
+        <a href=<?php $config->e_pic_domain(); ?> title="Pic Home">Home</a>
+        <a href=<?php $config->e_domain(); ?> title="Blog Home">Blog</a>
+        <a href=<?php $config->e_album_url(); ?> title="Photo Album">Album</a>
+        <a href=<?php $config->e_login_url(); ?> title="Login">Login</a>
     </div>
     <form id="uc" class='input_pic_box'>
         <input type="file" class='input_pic' name="pic_path" value="Input Picture" accept=".jpg .png .gif" />
